@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0%; 
 }
@@ -54,7 +59,7 @@ q {
 }
 
 img {
-    filter: blur(3px); 
+    filter: blur(2px); 
     border-radius: 50%; 
     max-width: 100%; 
     height: 340px; 
@@ -66,7 +71,7 @@ img {
 img:hover {
 	filter: grayscale(5%);  
     transition: transform 1s; 
-    transform: scale(2.1); 
+    transform: scale(1.1); 
 }
 
 @media screen and (max-width: 576px) {
@@ -138,7 +143,8 @@ footer {
     right: 0; 
     bottom: 0; 
     min-width: 100%;
-    z-index: -1; 
+    z-index: -1;
+    min-height: 100%; 
 }
 
 @media screen and (max-width: 576px) {
@@ -201,47 +207,226 @@ footer {
 	clear: both; 
 }
 
-input[type=text] {
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid teal;
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px; 
-    margin-bottom: 16px;
-    resize: vertical; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif Bold;
-}
+/* Contact form styling */
 
-input[type=text]:hover {
-    box-shadow: 0 0 5px yellow inset;
-}
-
-input[type=submit] {
-    background-color: mediumaquamarine; 
-    color: blanchedalmond; 
-    font-weight: bold; 
-    padding: 12px 20px;
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif Bold;
-}
-
-input[type=submit]:hover {
-    background-color: cornflowerblue; 
-    color: silver; 
-    transform: scale(1.5); 
-    transition: transform 1.5s; 
-}
-
-form {
-    border-radius: 5px; 
-    background-color: salmon; 
-    padding: 10px; 
+/* Makes contact form button slide in from right on page load */
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {bottom: 1.75vw;}
+  }
+  
+  /* Button used to open the contact form - fixed at the bottom of the page */
+  .Pop_Up_Button {
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;  
+    background-color: firebrick;
+    color: coral;
+    border: solid;
+    cursor: pointer;
+    position: fixed;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    border: 3px solid aquamarine;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+  }
+  
+  /* Form styling */
+  .form-container {
+    max-width: 49vw;
+    padding: 9px;
+    background-color: burlywood;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  /* Input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background: lightblue;
+    font-family: Helvetica, Avant Garde;
+    font-size: 1vw; 
+  }
+  
+  /* Submit button */
+  .form-container .btn {
+    background-color: rgb(242, 202, 43);
+    color: black;
+    border-color: seagreen;
+    margin-bottom:1vh;
+  }
+  
+  /* Close button */
+  .form-container .cancel {
+    background-color: rgb(184, 31, 11);
+    color: white;
+    border-color: mediumseagreen;
+  }
+  
+  /* Button styling */
+  button {
+    font-family: "Trebuchet MS", Optima; 
+    letter-spacing: .3vw; 
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw 1.5vw;
+    border-style: solid;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Hover effect for buttons */
+  button:hover, .form-container .btn:hover{
+    color: black;
+    background-color: yellow;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+    border-style: solid;
+    border-color: silver;
+  }
+  .form-container .cancel:hover{
+    color: white;
+    background-color: indigo;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+    border-style: solid;
+    border-color: black;
+  }	
+  
+  /* Footer element */
+  footer {
+      padding: 2%;
+      background-color:salmon;
+  }
+
+/* Slideshow Styling */
+#Slideshow_Background {
+    background:rgba(255,255,255, 0.35); /* This creates a slightly transparent white background that's placed over the video */
+    }
+  
+  
+.mySlides {
+    display: none;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+  
+}
+  
+/* Images contained within slideshow */
+.Slide_Show_Images {
+   vertical-align: middle;
+   height: auto;
+   box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+   width: auto;
+}
+  
+  
+/* Next and previous buttons */
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    margin-top: -0vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+  
+/* Positioning the right-hand next button */
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+/* Hover effect on slide show buttons */
+.Previous:hover, .Next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+  
+/* Slideshow text */
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0.75);
+    font-weight: bold;
+    border-radius: 7px 7px 7px 7px;
+}
+  
+/* Number text (1/6, 2/6, etc.) - we have set this display to none, which means these are hidden */
+.Slide_Number {
+    color: white;
+    position: absolute;
+    top: 0;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: none;
+}
+  
+/* The dots under the slideshow */
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    position: relative;
+    z-index: 1;
+}
+  
+/* Hover effect for slideshow dots */ 
+.active, .dot:hover {
+    background-color: black;
+}
+  
+/* Fading animation for slideshow */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;  
+}
