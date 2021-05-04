@@ -51,7 +51,7 @@ p:hover {
 }
 
 a {
-    color: darkgoldenrod;
+    color: lightcoral;
 }
 
 q {
@@ -83,7 +83,7 @@ img:hover {
 
 footer {
     padding: 2%;
-    background-color: aquamarine;
+    background-color:darkslategray;
 }
 
 .Navbar {
@@ -243,7 +243,7 @@ footer {
   .form-container {
     max-width: 49vw;
     padding: 9px;
-    background-color: mediumslateblue;
+    background-color: darkgray;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
@@ -304,11 +304,10 @@ footer {
     border-color: black;
   }	
   
-  /* Footer element */
-  footer {
-      padding: 2%;
-      background-color:salmon;
-  }
+  /* Footer element*/
+  .footerText {
+      color: whitesmoke;
+  } 
 
 /* Slideshow Styling */
 #Slideshow_Background {
